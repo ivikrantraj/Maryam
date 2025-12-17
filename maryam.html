@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maryam</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .name {
+      font-size: 5rem;
+      font-weight: 800;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.8s ease, letter-spacing 0.5s ease;
+      transform-style: preserve-3d;
+      user-select: none;
+      letter-spacing: 4px;
+    }
+
+    .rotate {
+      transform: rotateY(360deg);
+      letter-spacing: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .name {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="name" id="nameText">MARYAM</div>
+
+  <script>
+    const nameText = document.getElementById("nameText");
+    let toggled = false;
+
+    nameText.addEventListener("click", () => {
+      nameText.classList.add("rotate");
+
+      setTimeout(() => {
+        nameText.textContent = toggled ? "MARYAM" : "MADDIE BADDIE";
+        toggled = !toggled;
+      }, 400);
+
+      setTimeout(() => {
+        nameText.classList.remove("rotate");
+      }, 800);
+    });
+  </script>
+
+</body>
+</html>
